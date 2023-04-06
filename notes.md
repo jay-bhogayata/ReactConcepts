@@ -146,3 +146,11 @@ root.render(<App />);
 - name of component should be in PascalCase(name of component should start with capital letter).
 
 - other thing to notice is that we are using camelCase in jsx for example style={{ color: "yellow", fontSize: "2rem" }} and className="para1"
+
+- React and ReactDOM is two different library , react is for building user interface and react-dom is for rendering react element in DOM.
+
+- react use concept of virtual DOM to update the DOM.
+
+[doc to understand virtual dom](https://legacy.reactjs.org/docs/faq-internals.html)
+
+[nice article to understand virtual dom](https://programmingwithmosh.com/react/react-virtual-dom-explained/)
