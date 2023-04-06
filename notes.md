@@ -47,6 +47,8 @@ function App() {
 
 - add a script tag in index.html
 
+#### using react without jsx
+
 ```js
 <script>
   const element = React.createElement("h1", {}, "Hello web using react.js");
@@ -85,3 +87,62 @@ const domNode = document.getElementById("root");
 const root = ReactDOM.createRoot(domNode);
 root.render(app);
 ```
+
+#### using react with JSX
+
+- till this point we are not using jsx syntax , using jsx make our code more readable.
+
+- but problem is browser does not understand jsx syntax so we need to convert jsx to javascript.
+
+- to convert jsx to javascript we need to use babel.
+
+- Babel is a toolchain(complier) that is mainly used to convert ECMAScript 2015+ code into a backwards compatible version of JavaScript in current and older browsers or environments.
+
+- we have to add babel cdn in index.html
+
+```js
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js"
+  integrity="sha512-FneB6sFwq3OQG08dlVoj9iDn0XZG68wD9yg80ofbMCCzW8BioIgsAwSciFaVjM77PdsKdvz3kt/5MKwd+KVGDw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+></script>
+```
+
+- add type="text/babel" in script tag and converting code into jsx
+
+```jsx
+const Component1 = () => {
+  return (
+    <h1 style={{ color: "yellow", fontSize: "2rem" }}>
+      Hello web using react.js
+    </h1>
+  );
+};
+
+const Component2 = () => {
+  return (
+    <h1 style={{ color: "purple", fontSize: "1.5rem" }} className="para1">
+      react is javascript library to build user interfaces
+    </h1>
+  );
+};
+
+const App = () => {
+  return (
+    <>
+      <Component1 />
+      <Component2 />
+    </>
+  );
+};
+const domNode = document.getElementById("root");
+const root = ReactDOM.createRoot(domNode);
+root.render(<App />);
+```
+
+- notice that we are using react fragment in jsx that is denoted by <> </> or <React.Fragment></React.Fragment>
+
+- name of component should be in PascalCase(name of component should start with capital letter).
+
+- other thing to notice is that we are using camelCase in jsx for example style={{ color: "yellow", fontSize: "2rem" }} and className="para1"
