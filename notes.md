@@ -56,3 +56,32 @@ function App() {
 ```
 
 - open index.html in browser and your react app is running.
+
+- styling in react
+
+```js
+const style = {
+  color: "red",
+  fontSize: "2rem",
+};
+const element = React.createElement(
+  "h1",
+  { style },
+  "Hello web using react.js"
+);
+// or
+const element = React.createElement(
+  "h1",
+  { style: { color: "red", fontSize: "2rem" }, className: "heading" },
+  "Hello web using react.js"
+);
+```
+
+- render multiple element using react fragment
+
+```js
+const app = React.createElement(React.Fragment, null, element1, element2);
+const domNode = document.getElementById("root");
+const root = ReactDOM.createRoot(domNode);
+root.render(app);
+```

@@ -19,11 +19,24 @@
       src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
     ></script>
     <script>
-      const element = React.createElement("h1", {}, "Hello web using react.js");
-
+      const style = {
+        color: "orange",
+        fontSize: "2rem",
+      };
+      const element1 = React.createElement(
+        "h1",
+        { style },
+        "Hello web using react.js"
+      );
+      const element2 = React.createElement(
+        "p",
+        { style: { color: "purple", fontSize: "1.5rem" }, className: "para1" },
+        "react is javascript library to build user interfaces"
+      );
+      const app = React.createElement(React.Fragment, null, element1, element2);
       const domNode = document.getElementById("root");
       const root = ReactDOM.createRoot(domNode);
-      root.render(element);
+      root.render(app);
     </script>
   </body>
 </html>
